@@ -16,6 +16,7 @@
 
 package com.facebook;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import com.facebook.internal.*;
 import com.facebook.model.GraphObject;
@@ -225,6 +226,7 @@ public class Response {
     /**
      * Provides a debugging string for this response.
      */
+    @SuppressLint("DefaultLocale")
     @Override
     public String toString() {
         String responseCode;
@@ -260,7 +262,6 @@ public class Response {
         return responseCache;
     }
 
-    @SuppressWarnings("resource")
     static List<Response> fromHttpConnection(HttpURLConnection connection, RequestBatch requests) {
         InputStream stream = null;
 
